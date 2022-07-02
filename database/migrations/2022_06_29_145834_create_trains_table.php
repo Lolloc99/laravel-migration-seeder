@@ -18,12 +18,12 @@ class CreateTrainsTable extends Migration
             $table->string('Azienda', 50);
             $table->string('Stazione_di_partenza', 50);
             $table->string('Stazione_di_arrivo', 50);
-            $table->string('Orario_di_partenza', 50);
-            $table->string('Orario_di_arrivo', 50);
-            $table->string('Codice_treno', 50);
-            $table->unsignedSmallInteger('Numero_carrozze');
-            $table->boolean('In_orario')->default(1);
-            $table->boolean('Cancellato')->default(0);
+            $table->time('Orario_di_partenza', 0);
+            $table->time('Orario_di_arrivo', 0);
+            $table->string('Codice_treno', 10);
+            $table->tinyint('Numero_carrozze');
+            $table->boolean('In_orario')->default(true);
+            $table->boolean('Cancellato')->default(false);
             $table->timestamps();
         });
     }
@@ -40,12 +40,14 @@ class CreateTrainsTable extends Migration
 }
 
 
-// Azienda varchar(30)
-// Stazione di partenza varchar(40)
-// Stazione di arrivo varchar(40)
-// Orario di partenza varchar(7)
-// Orario di arrivo varchar(7)
-// Codice Treno varchar(6)
-// Numero Carrozze smallint(unsigned)
-// In orario tinyint(unsigned)
-// Cancellato(unsigned)
+// Codice Treno - varchar(10)
+// Azienda - varchar(20)
+// Stazione di partenza - varchar(50)
+// Stazione di arrivo - varchar(50)
+// Orario di partenza - time
+// Orario di arrivo - time
+// Numero Carrozze - tinyint
+// In orario - tinyint
+// Cancellato - tinyint
+
+// prendibili da parte 1 lezione giovedi
