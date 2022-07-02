@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Train;
 use Illuminate\Http\Request;
 
 class TrainsController extends Controller
@@ -13,7 +14,8 @@ class TrainsController extends Controller
      */
     public function index()
     {
-        //
+        $trains_list = Train::all();
+        return view('trains.index', compact('trains_list'));
     }
 
     /**
